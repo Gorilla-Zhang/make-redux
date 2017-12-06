@@ -5,6 +5,9 @@ import thunk from 'redux-thunk'//处理异步
 import {Provider} from 'react-redux'
 import {BrowserRouter,Route,Redirect,Switch} from 'react-router-dom'
 
+import Login from './container/login/login'
+import Register from './container/register/register'
+import AuthRoute from './component/authroute/authroute'
 import reducers from './reducer'
 import './config'
 
@@ -14,9 +17,16 @@ const store = createStore(reducers,compose(
 ))
 
 ReactDom.render(
-    (<Provider store={store}>
+    (
+    <Provider store={store}>
       <BrowserRouter> 
-      </BrowserRouter>
-    </Provider>),
+      <div>
+          <AuthRoute></AuthRoute>
+          <Route path='/login' component={Login}></Route>
+          <Route path='/register' component={Register}></Route>
+      </div>
+       </BrowserRouter>
+    </Provider> 
+    ),
     document.getElementById('root')
 )
