@@ -20,9 +20,8 @@ class AuthRoute extends React.Component {
                 if (res.data.code == 0) {
                     //有登陆信息
                 } else {
-                    this.props.history('/login')
+                    this.props.history.push('/login')
                 }
-                console.log(res.data)
             }
         })
         // （1.是否登录2.现在的url地址，

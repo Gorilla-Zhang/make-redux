@@ -24,7 +24,7 @@ class Login extends React.Component {
                 </List>
                 <Button type='primary'>登录</Button>
                 <WhiteSpace />
-                <Button onClick={this.register} type='primary'>登录</Button>
+                <Button onClick={this.register} type='primary'>注册</Button>
             </WingBlank>
         </div>)
     }
